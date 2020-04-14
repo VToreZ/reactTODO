@@ -1,0 +1,18 @@
+* {
+    block-size: auto;
+}
+
+.Header__header {
+    border: 1px solid black;
+    display: flex;
+}
+
+.Header__nav {
+    display: flex;
+    /* margin: auto; */
+    width: 100%;
+}
+
+.navItem {
+    margin: auto;
+}

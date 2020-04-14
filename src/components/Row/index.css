@@ -1,0 +1,24 @@
+* {
+    block-size: auto;
+}
+
+.rowHeader {
+    padding: 3px;
+    border: 1px solid black;
+    display: flex;
+}
+
+.rowContent {
+    border: 1px solid black;
+}
+
+.rowWrap {
+    border: 1px solid black;
+    width: 260px;
+    height: 500px;
+}
+
+.tasksContainer {
+    padding-left: 0;
+    margin-left: 4px;
+}
