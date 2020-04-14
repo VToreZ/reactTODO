@@ -5,12 +5,6 @@ import Row from '../Row';
 import './index.css';
 /////////
 
-function generateRow(props) {
-  return (
-    <Row name={props}/>
-  )
-}
-
 function Layout() {
   const [rowNames, setRowNames] = useState([
     {name: 'firstRow',
@@ -38,7 +32,7 @@ function Layout() {
   }
 
   function removeRow(id) {
-    setRowNames(rowNames.filter(row => row.id != id));
+    setRowNames(rowNames.slice(0, rowNames.length).filter(row => row.id != id));
   }
 
   return (

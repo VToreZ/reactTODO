@@ -17,9 +17,11 @@ function Row(props) {
   const [value, setValue] = useState('');
   
   function handleClick() {
-    const input = document.querySelector('input');
-      setTasks(tasks.concat({title: value, id: tasks.length + 1}));
+    if (value) {
+      const input = document.querySelector('input');
+      setTasks(tasks.slice(0, tasks.length).concat({title: value, id: tasks.length + 1}));
       setValue(''); 
+    }
   }
 
   function handleChange(event) {
@@ -27,23 +29,23 @@ function Row(props) {
   }
 
   function removeTask(id) {
-    setTasks(tasks.filter(task => task.id != id));
+    setTasks(tasks.slice(0, tasks.length).filter(task => task.id != id));
   }
 
   return (
       <div className="rowWrap">
+        <div className="rowContent">
         <div className="rowHeader">
-          <div className="rowName">
+          <strong className="rowName">
             {props.name}
-          </div>
+          </strong>
           <button onClick={() => removeRow(props.id)}>
             close
           </button>
         </div>
-        <div className="rowContent">
           <ul className="tasksContainer">
             {
-              tasks.map(task => {
+              tasks.slice(0, tasks.length).map(task => {
                 return (
                     <Task title={task.title} id={task.id} key={task.id} func={removeTask}/>
                 )
