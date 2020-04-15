@@ -3,11 +3,13 @@
     border-radius: 3px;
     box-shadow: 3px 2px 3px silver ;
     background-color: white;
-
-    padding: 5px;
+    
+    height: auto;
+    padding: 7px;
     margin: 5px;
     cursor: pointer;
 }
+
 
 .taskItem:hover {
     background-color: whitesmoke;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM, { render } from 'react-dom';
-import Context from './context';
 import Row from '../Row';
 import './index.css';
 /////////
@@ -36,16 +35,14 @@ function Layout() {
   }
 
   return (
-    <Context.Provider value={{removeRow}}>
       <div className='Layout__container'>
         <button onClick={addRow}>[+]</button>
         {
           rowNames.slice(0, rowNames.length).map(n => {
-            return <Row id={n.id} name={n.name} key={n.id}/>
+            return <Row id={n.id} name={n.name} key={n.id} removeRow={removeRow}/>
           })
         }
       </div>
-    </Context.Provider>
   );
 }
 

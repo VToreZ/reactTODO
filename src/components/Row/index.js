@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import ReactDOM, { render } from 'react-dom';
-import Context from '../Layout/context';
 import Task from '../Task/index';
 import './index.css';
 /////////
 function Row(props) {
-  const {removeRow} = useContext(Context);
   const [tasks, setTasks] = useState([
     {id: 1,
     title: 'firstDemoTask'},
@@ -39,7 +37,7 @@ function Row(props) {
           <strong className="rowName">
             {props.name}
           </strong>
-          <button onClick={() => removeRow(props.id)}>
+          <button onClick={() => props.removeRow(props.id)}>
             close
           </button>
         </div>
